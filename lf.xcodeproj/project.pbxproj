@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		290EA8AD1DFB61E700053022 /* TimerDriverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290EA8A81DFB61E700053022 /* TimerDriverTests.swift */; };
 		2911F9C01DE53F2A007FD1EC /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2911F9BF1DE53F2A007FD1EC /* XCGLogger.framework */; };
 		2911F9C11DE53F39007FD1EC /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2911F9BF1DE53F2A007FD1EC /* XCGLogger.framework */; };
+		291468191E581C8F00E619BA /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291468161E581C7D00E619BA /* Preference.swift */; };
 		2915EC4D1D85BB8C00621092 /* RTMPTSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294852551D84BFAD002DE492 /* RTMPTSocket.swift */; };
 		2915EC541D85BDF100621092 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915EC531D85BDF100621092 /* ReplayKit.framework */; };
 		2915EC601D85BDF100621092 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2915EC531D85BDF100621092 /* ReplayKit.framework */; };
@@ -62,13 +63,19 @@
 		2942EF841DFF4D06008E620C /* lf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2945CBBD1B4BE66000104112 /* lf.framework */; };
 		2942EF861DFF4D3C008E620C /* lf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2945CBBD1B4BE66000104112 /* lf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		294852571D852499002DE492 /* RTMPTSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294852551D84BFAD002DE492 /* RTMPTSocket.swift */; };
+		295074301E4620FF007F15A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29205CBD1E461F4E009D3FFF /* Main.storyboard */; };
+		295074311E462105007F15A4 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950742E1E4620B7007F15A4 /* PreferenceViewController.swift */; };
 		2955F51F1D09EBAD004CC995 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296897461CDB01D20074D5F0 /* VisualEffect.swift */; };
+		29562B881E6BFFE000BB940A /* lf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B8761B1CD701F900FC07DA /* lf.framework */; };
+		29562B891E6BFFE000BB940A /* lf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29B8761B1CD701F900FC07DA /* lf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2957473E1E34F3DB00EF056E /* RTMPBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2957473B1E34F30300EF056E /* RTMPBroadcaster.swift */; };
+		295747911E37AC1000EF056E /* RTMPStreamQoSStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295747901E37AC1000EF056E /* RTMPStreamQoSStrategy.swift */; };
+		295747921E3A30A400EF056E /* RTMPStreamQoSStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295747901E37AC1000EF056E /* RTMPStreamQoSStrategy.swift */; };
 		2962425E1D8BFC7B00C451A3 /* MovieClipHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D8A301D8B233C00DBECE2 /* MovieClipHandler.swift */; };
 		296242611D8DB86500C451A3 /* TSReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962425F1D8DB86500C451A3 /* TSReader.swift */; };
 		296242621D8DB86500C451A3 /* TSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296242601D8DB86500C451A3 /* TSWriter.swift */; };
 		296242631D8DBA8C00C451A3 /* TSReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962425F1D8DB86500C451A3 /* TSReader.swift */; };
 		296242641D8DBA9000C451A3 /* TSWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296242601D8DB86500C451A3 /* TSWriter.swift */; };
-		2965434F1D62FAED00734698 /* RTMPConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2965434E1D62FAED00734698 /* RTMPConnectionTests.m */; };
 		296543601D62FE6A00734698 /* AudioUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296543561D62FE6200734698 /* AudioUtil.swift */; };
 		296543611D62FE7100734698 /* GLLFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296543571D62FE6200734698 /* GLLFView.swift */; };
 		296543621D62FE8100734698 /* lf.h in Headers */ = {isa = PBXBuildFile; fileRef = 296543591D62FE6200734698 /* lf.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,7 +84,6 @@
 		296897661CDB028C0074D5F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2968974D1CDB01DD0074D5F0 /* LaunchScreen.storyboard */; };
 		296897671CDB02940074D5F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296897411CDB01D20074D5F0 /* AppDelegate.swift */; };
 		296897681CDB02940074D5F0 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296897441CDB01D20074D5F0 /* LiveViewController.swift */; };
-		296897691CDB02940074D5F0 /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296897451CDB01D20074D5F0 /* PreferenceController.swift */; };
 		2975EF6F1D6096FB00DABA5A /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975EF6E1D6096FB00DABA5A /* Mutex.swift */; };
 		2975EF701D60B32600DABA5A /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2975EF6E1D6096FB00DABA5A /* Mutex.swift */; };
 		2976A47E1D48C5C700B53EF2 /* AVMixerRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2976A47D1D48C5C700B53EF2 /* AVMixerRecorder.swift */; };
@@ -95,7 +101,6 @@
 		2981B7F71D734A39002FA821 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981B7F31D7345D5002FA821 /* SessionDescription.swift */; };
 		2989C3B61D69C43000038653 /* RTPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD70E51D68CF020021904A /* RTPPacket.swift */; };
 		298BCF331DD4C44A007FF86A /* AnyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BCF321DD4C44A007FF86A /* AnyUtil.swift */; };
-		2997BDD21D50D2FC000AF900 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2997BDD11D50D2FC000AF900 /* README.md */; };
 		299AE0E31D44E6EE00D26A49 /* RTSPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AE0E21D44E6EE00D26A49 /* RTSPConnection.swift */; };
 		299AE0E51D44EC7800D26A49 /* RTSPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AE0E41D44EC7800D26A49 /* RTSPSocket.swift */; };
 		299AE0E61D45003A00D26A49 /* RTSPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299AE0E21D44E6EE00D26A49 /* RTSPConnection.swift */; };
@@ -192,27 +197,23 @@
 		29B8771B1CD70D5A00FC07DA /* ByteArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B876B81CD70B3900FC07DA /* ByteArray.swift */; };
 		29B8771C1CD70D5A00FC07DA /* CRC32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B876B91CD70B3900FC07DA /* CRC32.swift */; };
 		29B8771D1CD70D5A00FC07DA /* EventDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B876BA1CD70B3900FC07DA /* EventDispatcher.swift */; };
-		29BA5B911D50BEAD00A51EA8 /* RTMPStreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BA5B901D50BEAD00A51EA8 /* RTMPStreamTests.m */; };
-		29BA5B931D50BEAD00A51EA8 /* lf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B8761B1CD701F900FC07DA /* lf.framework */; };
 		29BCFFA61D68C75B00F1A726 /* RTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCFFA51D68C75A00F1A726 /* RTPService.swift */; };
 		29BCFFA71D68C75B00F1A726 /* RTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCFFA51D68C75A00F1A726 /* RTPService.swift */; };
 		29C263181D00804A0098D4EF /* GLLFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C263171D00804A0098D4EF /* GLLFView.swift */; };
 		29C2631C1D0083B50098D4EF /* VideoIOComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B8768E1CD70AFE00FC07DA /* VideoIOComponent.swift */; };
 		29D0E3681DD4CE3700863B3B /* AnyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298BCF321DD4C44A007FF86A /* AnyUtil.swift */; };
 		29DC67051E00477900A7DC71 /* lf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2945CBBD1B4BE66000104112 /* lf.framework */; };
-		29DC67071E00491D00A7DC71 /* RTMPBroadcaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DC67061E00491C00A7DC71 /* RTMPBroadcaster.swift */; };
 		29DD70E41D68CACA0021904A /* RTSPStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD70E31D68CACA0021904A /* RTSPStream.swift */; };
 		29DD70E61D68CF020021904A /* RTPPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD70E51D68CF020021904A /* RTPPacket.swift */; };
 		29DD70E71D68D45E0021904A /* RTSPStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD70E31D68CACA0021904A /* RTSPStream.swift */; };
 		29E5C0FE1D05B3B600407208 /* AudioUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E5C0F91D05B32700407208 /* AudioUtil.swift */; };
 		29EF03781CD79A5400473D99 /* lf.h in Headers */ = {isa = PBXBuildFile; fileRef = 299F7E3B1CD71A97001E7272 /* lf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29EF037C1CD7AC7000473D99 /* lf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B8761B1CD701F900FC07DA /* lf.framework */; };
 		29F5FEA61DE2C70A00D0CCB4 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F5FEA51DE2C70A00D0CCB4 /* XCGLogger.framework */; };
 		29F5FEA71DE2C71000D0CCB4 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F5FEA51DE2C70A00D0CCB4 /* XCGLogger.framework */; };
 		29F6F4851DFB83E200920A3A /* RTMPHandshake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */; };
 		29F6F4861DFB862400920A3A /* RTMPHandshake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */; };
-		29FB94311E1BECCA005DE4DF /* SoundMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundMixer.swift */; };
-		29FB94321E1BF507005DE4DF /* SoundMixer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundMixer.swift */; };
+		29FB94311E1BECCA005DE4DF /* SoundSpliter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */; };
+		29FB94321E1BF507005DE4DF /* SoundSpliter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,13 @@
 			remoteGlobalIDString = 2915EC511D85BDF100621092;
 			remoteInfo = Screencast;
 		};
+		29562B8A1E6BFFE000BB940A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2945CBB41B4BE66000104112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29B8761A1CD701F900FC07DA;
+			remoteInfo = macOS;
+		};
 		29798E5F1CE60E5300F5CBD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2945CBB41B4BE66000104112 /* Project object */;
@@ -243,13 +251,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 29C932931CD76FD300283FC5;
 			remoteInfo = "Example MacOS";
-		};
-		29BA5B941D50BEAD00A51EA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2945CBB41B4BE66000104112 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 29B8761A1CD701F900FC07DA;
-			remoteInfo = "lf OSX";
 		};
 		29C932A81CD78B5500283FC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -291,6 +292,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29562B8C1E6BFFE000BB940A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				29562B891E6BFFE000BB940A /* lf.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		29EF037B1CD79B3900473D99 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,11 +337,13 @@
 		290EA8A71DFB61E700053022 /* MD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MD5Tests.swift; path = Util/MD5Tests.swift; sourceTree = "<group>"; };
 		290EA8A81DFB61E700053022 /* TimerDriverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerDriverTests.swift; path = Util/TimerDriverTests.swift; sourceTree = "<group>"; };
 		2911F9BF1DE53F2A007FD1EC /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/Mac/XCGLogger.framework; sourceTree = "<group>"; };
+		291468161E581C7D00E619BA /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preference.swift; path = Examples/iOS/Preference.swift; sourceTree = "<group>"; };
 		2915EC521D85BDF100621092 /* Screencast.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Screencast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2915EC531D85BDF100621092 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		2915EC5F1D85BDF100621092 /* ScreencastUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScreencastUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2915EC611D85BDF100621092 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		291F4E361CF206E200F59C51 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Examples/iOS/Icon.png; sourceTree = "<group>"; };
+		29205CBD1E461F4E009D3FFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Examples/iOS/Main.storyboard; sourceTree = "<group>"; };
 		2923A1FA1D63011E0019FBCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Examples/macOS/Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29245AEC1D3233EB00AFFB9A /* VideoGravityUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoGravityUtil.swift; path = Sources/Util/VideoGravityUtil.swift; sourceTree = SOURCE_ROOT; };
 		2926A9EB1DE6B71D0074E3D2 /* MachUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MachUtil.swift; path = Sources/Util/MachUtil.swift; sourceTree = SOURCE_ROOT; };
@@ -344,9 +358,11 @@
 		2942424C1CF4C01300D65DCB /* MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/Util/MD5.swift; sourceTree = SOURCE_ROOT; };
 		2945CBBD1B4BE66000104112 /* lf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		294852551D84BFAD002DE492 /* RTMPTSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPTSocket.swift; path = Sources/RTMP/RTMPTSocket.swift; sourceTree = SOURCE_ROOT; };
+		2950742E1E4620B7007F15A4 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceViewController.swift; path = Examples/iOS/PreferenceViewController.swift; sourceTree = "<group>"; };
+		2957473B1E34F30300EF056E /* RTMPBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPBroadcaster.swift; path = Examples/iOS/Screencast/RTMPBroadcaster.swift; sourceTree = "<group>"; };
+		295747901E37AC1000EF056E /* RTMPStreamQoSStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPStreamQoSStrategy.swift; path = Sources/RTMP/RTMPStreamQoSStrategy.swift; sourceTree = SOURCE_ROOT; };
 		2962425F1D8DB86500C451A3 /* TSReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSReader.swift; path = Sources/ISO/TSReader.swift; sourceTree = SOURCE_ROOT; };
 		296242601D8DB86500C451A3 /* TSWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TSWriter.swift; path = Sources/ISO/TSWriter.swift; sourceTree = SOURCE_ROOT; };
-		2965434E1D62FAED00734698 /* RTMPConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMPConnectionTests.m; sourceTree = "<group>"; };
 		296543561D62FE6200734698 /* AudioUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioUtil.swift; path = Platforms/macOS/AudioUtil.swift; sourceTree = "<group>"; };
 		296543571D62FE6200734698 /* GLLFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GLLFView.swift; path = Platforms/macOS/GLLFView.swift; sourceTree = "<group>"; };
 		296543581D62FE6200734698 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/macOS/Info.plist; sourceTree = "<group>"; };
@@ -362,7 +378,6 @@
 		296897421CDB01D20074D5F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Examples/iOS/Assets.xcassets; sourceTree = "<group>"; };
 		296897431CDB01D20074D5F0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Examples/iOS/Info.plist; sourceTree = "<group>"; };
 		296897441CDB01D20074D5F0 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveViewController.swift; path = Examples/iOS/LiveViewController.swift; sourceTree = "<group>"; };
-		296897451CDB01D20074D5F0 /* PreferenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceController.swift; path = Examples/iOS/PreferenceController.swift; sourceTree = "<group>"; };
 		296897461CDB01D20074D5F0 /* VisualEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VisualEffect.swift; path = Examples/iOS/VisualEffect.swift; sourceTree = "<group>"; };
 		2968974E1CDB01DD0074D5F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Examples/iOS/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2975EF6E1D6096FB00DABA5A /* Mutex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mutex.swift; path = Sources/Util/Mutex.swift; sourceTree = SOURCE_ROOT; };
@@ -375,7 +390,6 @@
 		2981B7F31D7345D5002FA821 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionDescription.swift; path = Sources/RTSP/SessionDescription.swift; sourceTree = SOURCE_ROOT; };
 		2981E1301D646E3F00E8F7CA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		298BCF321DD4C44A007FF86A /* AnyUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyUtil.swift; path = Sources/Util/AnyUtil.swift; sourceTree = SOURCE_ROOT; };
-		2997BDD11D50D2FC000AF900 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2997BDD31D50D31B000AF900 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2997BDD51D50D3D5000AF900 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		299AE0E21D44E6EE00D26A49 /* RTSPConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTSPConnection.swift; path = Sources/RTSP/RTSPConnection.swift; sourceTree = SOURCE_ROOT; };
@@ -436,21 +450,17 @@
 		29B876D71CD70CE700FC07DA /* SampleVideo_360x240_5mb */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SampleVideo_360x240_5mb; path = Tests/SampleVideo_360x240_5mb; sourceTree = SOURCE_ROOT; };
 		29B876D81CD70CE700FC07DA /* SampleVideo_360x240_5mb.m3u8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SampleVideo_360x240_5mb.m3u8; path = Tests/SampleVideo_360x240_5mb.m3u8; sourceTree = SOURCE_ROOT; };
 		29B876D91CD70CE700FC07DA /* SampleVideo_360x240_5mb.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = SampleVideo_360x240_5mb.mp4; path = Tests/SampleVideo_360x240_5mb.mp4; sourceTree = SOURCE_ROOT; };
-		29BA5B8E1D50BEAD00A51EA8 /* Tests Objective-C.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests Objective-C.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29BA5B901D50BEAD00A51EA8 /* RTMPStreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMPStreamTests.m; sourceTree = "<group>"; };
-		29BA5B921D50BEAD00A51EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BCFFA51D68C75A00F1A726 /* RTPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTPService.swift; path = Sources/RTP/RTPService.swift; sourceTree = SOURCE_ROOT; };
 		29C263171D00804A0098D4EF /* GLLFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GLLFView.swift; path = Platforms/iOS/GLLFView.swift; sourceTree = "<group>"; };
 		29C9327E1CD76FB800283FC5 /* Example iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C932941CD76FD300283FC5 /* Example macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		29DC67061E00491C00A7DC71 /* RTMPBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPBroadcaster.swift; path = Platforms/iOS/RTMPBroadcaster.swift; sourceTree = "<group>"; };
 		29DD70E31D68CACA0021904A /* RTSPStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTSPStream.swift; path = Sources/RTSP/RTSPStream.swift; sourceTree = SOURCE_ROOT; };
 		29DD70E51D68CF020021904A /* RTPPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTPPacket.swift; path = Sources/RTP/RTPPacket.swift; sourceTree = SOURCE_ROOT; };
 		29E258361D7C249B0070DC07 /* lf.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lf.podspec; sourceTree = "<group>"; };
 		29E5C0F91D05B32700407208 /* AudioUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioUtil.swift; path = Platforms/iOS/AudioUtil.swift; sourceTree = "<group>"; };
 		29F5FEA51DE2C70A00D0CCB4 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPHandshake.swift; path = Sources/RTMP/RTMPHandshake.swift; sourceTree = SOURCE_ROOT; };
-		29FB94301E1BECCA005DE4DF /* SoundMixer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundMixer.swift; path = Sources/Media/SoundMixer.swift; sourceTree = SOURCE_ROOT; };
+		29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundSpliter.swift; path = Sources/Media/SoundSpliter.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,14 +498,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29BA5B8B1D50BEAD00A51EA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				29BA5B931D50BEAD00A51EA8 /* lf.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29C9327B1CD76FB800283FC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,7 +511,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EF037C1CD7AC7000473D99 /* lf.framework in Frameworks */,
+				29562B881E6BFFE000BB940A /* lf.framework in Frameworks */,
 				2911F9C11DE53F39007FD1EC /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,7 +653,6 @@
 				2945CBBE1B4BE66000104112 /* Products */,
 				2945CBBF1B4BE66000104112 /* Sources */,
 				29798E5A1CE60E5300F5CBD0 /* Tests */,
-				29BA5B8F1D50BEAD00A51EA8 /* Tests Objective-C */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
@@ -664,7 +665,6 @@
 				29C9327E1CD76FB800283FC5 /* Example iOS.app */,
 				29C932941CD76FD300283FC5 /* Example macOS.app */,
 				29798E591CE60E5300F5CBD0 /* Tests.xctest */,
-				29BA5B8E1D50BEAD00A51EA8 /* Tests Objective-C.xctest */,
 				2915EC521D85BDF100621092 /* Screencast.appex */,
 				2915EC5F1D85BDF100621092 /* ScreencastUI.appex */,
 			);
@@ -762,7 +762,9 @@
 				296897431CDB01D20074D5F0 /* Info.plist */,
 				2968974D1CDB01DD0074D5F0 /* LaunchScreen.storyboard */,
 				296897441CDB01D20074D5F0 /* LiveViewController.swift */,
-				296897451CDB01D20074D5F0 /* PreferenceController.swift */,
+				29205CBD1E461F4E009D3FFF /* Main.storyboard */,
+				291468161E581C7D00E619BA /* Preference.swift */,
+				2950742E1E4620B7007F15A4 /* PreferenceViewController.swift */,
 				29A39C801D85BEFA007C27E9 /* Screencast */,
 				29A39C811D85BF07007C27E9 /* ScreencastUI */,
 				296897461CDB01D20074D5F0 /* VisualEffect.swift */,
@@ -835,7 +837,6 @@
 				299F7E3A1CD71A97001E7272 /* Info.plist */,
 				299F7E3B1CD71A97001E7272 /* lf.h */,
 				299B13261D3B751400A1E8F5 /* LFView.swift */,
-				29DC67061E00491C00A7DC71 /* RTMPBroadcaster.swift */,
 				299B131C1D35272D00A1E8F5 /* ScreenCaptureSession.swift */,
 			);
 			name = iOS;
@@ -847,6 +848,7 @@
 				29A39C881D85BF30007C27E9 /* Info.plist */,
 				292D8A301D8B233C00DBECE2 /* MovieClipHandler.swift */,
 				2930D03D1E12D12100DA2DC5 /* README.md */,
+				2957473B1E34F30300EF056E /* RTMPBroadcaster.swift */,
 				2930D03F1E12D17C00DA2DC5 /* SampleHandler.swift */,
 			);
 			name = Screencast;
@@ -860,17 +862,6 @@
 				29A39C841D85BF21007C27E9 /* Info.plist */,
 			);
 			name = ScreencastUI;
-			sourceTree = "<group>";
-		};
-		29BA5B8F1D50BEAD00A51EA8 /* Tests Objective-C */ = {
-			isa = PBXGroup;
-			children = (
-				29BA5B921D50BEAD00A51EA8 /* Info.plist */,
-				2997BDD11D50D2FC000AF900 /* README.md */,
-				2965434E1D62FAED00734698 /* RTMPConnectionTests.m */,
-				29BA5B901D50BEAD00A51EA8 /* RTMPStreamTests.m */,
-			);
-			path = "Tests Objective-C";
 			sourceTree = "<group>";
 		};
 		29BCFFA41D68C66200F1A726 /* RTP */ = {
@@ -890,7 +881,7 @@
 				29B8768B1CD70AFE00FC07DA /* AVMixer.swift */,
 				2976A47D1D48C5C700B53EF2 /* AVMixerRecorder.swift */,
 				2976A4801D49025B00B53EF2 /* IOComponent.swift */,
-				29FB94301E1BECCA005DE4DF /* SoundMixer.swift */,
+				29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */,
 				29B8768D1CD70AFE00FC07DA /* SoundTransform.swift */,
 				29B8768E1CD70AFE00FC07DA /* VideoIOComponent.swift */,
 				29B8768F1CD70AFE00FC07DA /* VisualEffect.swift */,
@@ -914,6 +905,7 @@
 				29B876A81CD70B2800FC07DA /* RTMPSharedObject.swift */,
 				29B876A91CD70B2800FC07DA /* RTMPSocket.swift */,
 				29B876AA1CD70B2800FC07DA /* RTMPStream.swift */,
+				295747901E37AC1000EF056E /* RTMPStreamQoSStrategy.swift */,
 				294852551D84BFAD002DE492 /* RTMPTSocket.swift */,
 			);
 			name = RTMP;
@@ -1033,24 +1025,6 @@
 			productReference = 29B8761B1CD701F900FC07DA /* lf.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		29BA5B8D1D50BEAD00A51EA8 /* Tests Objective-C */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29BA5B961D50BEAD00A51EA8 /* Build configuration list for PBXNativeTarget "Tests Objective-C" */;
-			buildPhases = (
-				29BA5B8A1D50BEAD00A51EA8 /* Sources */,
-				29BA5B8B1D50BEAD00A51EA8 /* Frameworks */,
-				29BA5B8C1D50BEAD00A51EA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				29BA5B951D50BEAD00A51EA8 /* PBXTargetDependency */,
-			);
-			name = "Tests Objective-C";
-			productName = "Tests Objective-C";
-			productReference = 29BA5B8E1D50BEAD00A51EA8 /* Tests Objective-C.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		29C9327D1CD76FB800283FC5 /* Example iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C9328D1CD76FB800283FC5 /* Build configuration list for PBXNativeTarget "Example iOS" */;
@@ -1083,10 +1057,12 @@
 				29C932911CD76FD300283FC5 /* Frameworks */,
 				29C932921CD76FD300283FC5 /* Resources */,
 				293B521C1DE2C2700092C73C /* ShellScript */,
+				29562B8C1E6BFFE000BB940A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				29562B8B1E6BFFE000BB940A /* PBXTargetDependency */,
 			);
 			name = "Example macOS";
 			productName = "Example MacOS";
@@ -1127,9 +1103,6 @@
 						CreatedOnToolsVersion = 7.3;
 						LastSwiftMigration = 0800;
 					};
-					29BA5B8D1D50BEAD00A51EA8 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					29C9327D1CD76FB800283FC5 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = SUEQ2SZ2L5;
@@ -1143,7 +1116,7 @@
 				};
 			};
 			buildConfigurationList = 2945CBB71B4BE66000104112 /* Build configuration list for PBXProject "lf" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1162,7 +1135,6 @@
 				2915EC511D85BDF100621092 /* Screencast */,
 				2915EC5E1D85BDF100621092 /* ScreencastUI */,
 				29798E581CE60E5300F5CBD0 /* Tests */,
-				29BA5B8D1D50BEAD00A51EA8 /* Tests Objective-C */,
 			);
 		};
 /* End PBXProject section */
@@ -1208,13 +1180,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29BA5B8C1D50BEAD00A51EA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29C9327C1CD76FB800283FC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1222,6 +1187,7 @@
 				291F4E381CF206E600F59C51 /* Icon.png in Resources */,
 				296897651CDB028C0074D5F0 /* Assets.xcassets in Resources */,
 				296897661CDB028C0074D5F0 /* LaunchScreen.storyboard in Resources */,
+				295074301E4620FF007F15A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1270,13 +1236,13 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/XCGLogger.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			showEnvVarsInLog = 0;
 		};
 		29F5FEA81DE2C76B00D0CCB4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1301,6 +1267,7 @@
 			files = (
 				2930D0411E12D35400DA2DC5 /* SampleHandler.swift in Sources */,
 				2962425E1D8BFC7B00C451A3 /* MovieClipHandler.swift in Sources */,
+				2957473E1E34F3DB00EF056E /* RTMPBroadcaster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1322,7 +1289,7 @@
 				299B131D1D35272D00A1E8F5 /* ScreenCaptureSession.swift in Sources */,
 				2915EC4D1D85BB8C00621092 /* RTMPTSocket.swift in Sources */,
 				29C2631C1D0083B50098D4EF /* VideoIOComponent.swift in Sources */,
-				29FB94311E1BECCA005DE4DF /* SoundMixer.swift in Sources */,
+				29FB94311E1BECCA005DE4DF /* SoundSpliter.swift in Sources */,
 				29B876B41CD70B2800FC07DA /* RTMPSharedObject.swift in Sources */,
 				29B8766E1CD70AB300FC07DA /* SiwftCore+Extension.swift in Sources */,
 				2901A4EE1D437170002BBD23 /* ClockedQueue.swift in Sources */,
@@ -1374,12 +1341,12 @@
 				29C263181D00804A0098D4EF /* GLLFView.swift in Sources */,
 				29B876881CD70AE800FC07DA /* TransportStream.swift in Sources */,
 				29B876BE1CD70B3900FC07DA /* EventDispatcher.swift in Sources */,
-				29DC67071E00491D00A7DC71 /* RTMPBroadcaster.swift in Sources */,
 				29B8769D1CD70B1100FC07DA /* NetService.swift in Sources */,
 				29B8769E1CD70B1100FC07DA /* NetSocket.swift in Sources */,
 				29B876791CD70ACE00FC07DA /* HTTPStream.swift in Sources */,
 				292D8A331D8B293300DBECE2 /* MP4Sampler.swift in Sources */,
 				29798E521CE5DF1A00F5CBD0 /* MP4Reader.swift in Sources */,
+				295747911E37AC1000EF056E /* RTMPStreamQoSStrategy.swift in Sources */,
 				29B876AC1CD70B2800FC07DA /* AMF3Serializer.swift in Sources */,
 				29B876921CD70AFE00FC07DA /* AVMixer.swift in Sources */,
 				29B876911CD70AFE00FC07DA /* AudioStreamPlayback.swift in Sources */,
@@ -1431,6 +1398,7 @@
 				29B876F11CD70D5900FC07DA /* CoreMedia+Extension.swift in Sources */,
 				29B876F21CD70D5900FC07DA /* Foundation+Extension.swift in Sources */,
 				292AC17C1CF4C871004F5730 /* MD5.swift in Sources */,
+				295747921E3A30A400EF056E /* RTMPStreamQoSStrategy.swift in Sources */,
 				29B876F41CD70D5900FC07DA /* Protocol.swift in Sources */,
 				2976A4821D4902CE00B53EF2 /* IOComponent.swift in Sources */,
 				29B876F51CD70D5900FC07DA /* SiwftCore+Extension.swift in Sources */,
@@ -1440,7 +1408,7 @@
 				29B876F91CD70D5900FC07DA /* HTTPStream.swift in Sources */,
 				296543631D62FE9000734698 /* LFView.swift in Sources */,
 				29B876FA1CD70D5900FC07DA /* M3U.swift in Sources */,
-				29FB94321E1BF507005DE4DF /* SoundMixer.swift in Sources */,
+				29FB94321E1BF507005DE4DF /* SoundSpliter.swift in Sources */,
 				292D8A341D8B294900DBECE2 /* MP4Sampler.swift in Sources */,
 				29B876FD1CD70D5A00FC07DA /* AudioSpecificConfig.swift in Sources */,
 				296242631D8DBA8C00C451A3 /* TSReader.swift in Sources */,
@@ -1498,24 +1466,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29BA5B8A1D50BEAD00A51EA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2997BDD21D50D2FC000AF900 /* README.md in Sources */,
-				29BA5B911D50BEAD00A51EA8 /* RTMPStreamTests.m in Sources */,
-				2965434F1D62FAED00734698 /* RTMPConnectionTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29C9327A1CD76FB800283FC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291468191E581C8F00E619BA /* Preference.swift in Sources */,
 				296897671CDB02940074D5F0 /* AppDelegate.swift in Sources */,
 				296897681CDB02940074D5F0 /* LiveViewController.swift in Sources */,
 				2955F51F1D09EBAD004CC995 /* VisualEffect.swift in Sources */,
-				296897691CDB02940074D5F0 /* PreferenceController.swift in Sources */,
+				295074311E462105007F15A4 /* PreferenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1543,6 +1502,11 @@
 			target = 2915EC511D85BDF100621092 /* Screencast */;
 			targetProxy = 2915EC6D1D85BDF100621092 /* PBXContainerItemProxy */;
 		};
+		29562B8B1E6BFFE000BB940A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29B8761A1CD701F900FC07DA /* macOS */;
+			targetProxy = 29562B8A1E6BFFE000BB940A /* PBXContainerItemProxy */;
+		};
 		29798E601CE60E5300F5CBD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 29B8761A1CD701F900FC07DA /* macOS */;
@@ -1552,11 +1516,6 @@
 			isa = PBXTargetDependency;
 			target = 29C932931CD76FD300283FC5 /* Example macOS */;
 			targetProxy = 29798E641CE60E5E00F5CBD0 /* PBXContainerItemProxy */;
-		};
-		29BA5B951D50BEAD00A51EA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 29B8761A1CD701F900FC07DA /* macOS */;
-			targetProxy = 29BA5B941D50BEAD00A51EA8 /* PBXContainerItemProxy */;
 		};
 		29C932A91CD78B5500283FC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1596,7 +1555,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = SUEQ2SZ2L5;
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/iOS/Screencast/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.lf.Example-iOS.Screencast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1616,7 +1575,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SUEQ2SZ2L5;
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/iOS/Screencast/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.lf.Example-iOS.Screencast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1636,7 +1595,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = SUEQ2SZ2L5;
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/iOS/ScreencastUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.lf.Example-iOS.ScreencastUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1656,7 +1615,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = SUEQ2SZ2L5;
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/iOS/ScreencastUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.lf.Example-iOS.ScreencastUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1865,7 +1824,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1894,7 +1853,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1914,36 +1873,6 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		29BA5B971D50BEAD00A51EA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = "Tests Objective-C/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.Tests-Objective-C";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		29BA5B981D50BEAD00A51EA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CLANG_ANALYZER_NONNULL = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Tests Objective-C/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.shogo4405.Tests-Objective-C";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1998,6 +1927,7 @@
 		29C9329F1CD76FD400283FC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -2019,6 +1949,7 @@
 		29C932A01CD76FD400283FC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -2089,15 +2020,6 @@
 			buildConfigurations = (
 				29B876211CD701F900FC07DA /* Debug */,
 				29B876221CD701F900FC07DA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		29BA5B961D50BEAD00A51EA8 /* Build configuration list for PBXNativeTarget "Tests Objective-C" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29BA5B971D50BEAD00A51EA8 /* Debug */,
-				29BA5B981D50BEAD00A51EA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

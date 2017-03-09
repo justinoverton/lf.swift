@@ -2,16 +2,12 @@ import Foundation
 
 open class NetService: NSObject {
 
-    var recordData:Data? {
+    open var txtData:Data? {
         return nil
     }
 
-    let lockQueue:DispatchQueue = DispatchQueue(
-        label: "com.github.shogo4405.lf.NetService.lock", attributes: []
-    )
-    var networkQueue:DispatchQueue = DispatchQueue(
-        label: "com.github.shogo4405.lf.NetService.network", attributes: []
-    )
+    let lockQueue:DispatchQueue = DispatchQueue(label: "com.github.shogo4405.lf.NetService.lock")
+    var networkQueue:DispatchQueue = DispatchQueue(label: "com.github.shogo4405.lf.NetService.network")
 
     fileprivate(set) var domain:String
     fileprivate(set) var name:String
@@ -63,7 +59,7 @@ open class NetService: NSObject {
         runloop = RunLoop.current
         service = Foundation.NetService(domain: domain, type: type, name: name, port: port)
         service.delegate = self
-        service.setTXTRecord(recordData)
+        service.setTXTRecord(txtData)
         service.schedule(in: runloop, forMode: RunLoopMode.defaultRunLoopMode)
         if (type.contains("._udp")) {
             service.publish()

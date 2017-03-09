@@ -10,6 +10,7 @@ protocol NetStreamDrawable: class {
     var position:AVCaptureDevicePosition { get set }
 
     func draw(image:CIImage)
+    func attachStream(_ stream:NetStream?)
     func render(image: CIImage, to toCVPixelBuffer: CVPixelBuffer)
 }
 
@@ -19,10 +20,11 @@ open class NetStream: NSObject {
     public let lockQueue:DispatchQueue = DispatchQueue(label: "com.github.shogo4405.lf.NetStream.lock")
 
     deinit {
-        #if os(iOS)
-        syncOrientation = false
-        #endif
+        metadata.removeAll()
+        NotificationCenter.default.removeObserver(self)
     }
+
+    open var metadata:[String:NSObject] = [:]
 
     open var torch:Bool {
         get {
@@ -42,19 +44,12 @@ open class NetStream: NSObject {
     #if os(iOS)
     open var orientation:AVCaptureVideoOrientation {
         get {
-            var orientation:AVCaptureVideoOrientation!
-            DispatchQueue.main.sync {
-                orientation = self.mixer.videoIO.orientation
-            }
-            return orientation
+            return mixer.videoIO.orientation
         }
         set {
-            DispatchQueue.main.async {
-                self.mixer.videoIO.orientation = newValue
-            }
+            self.mixer.videoIO.orientation = newValue
         }
     }
-
     open var syncOrientation:Bool = false {
         didSet {
             guard syncOrientation != oldValue else {
@@ -78,7 +73,7 @@ open class NetStream: NSObject {
             return  audioSettings
         }
         set {
-            lockQueue.async {
+            lockQueue.sync {
                 self.mixer.audioIO.encoder.setValuesForKeys(newValue)
             }
         }
@@ -93,7 +88,7 @@ open class NetStream: NSObject {
             return videoSettings
         }
         set {
-            lockQueue.async {
+            lockQueue.sync {
                 self.mixer.videoIO.encoder.setValuesForKeys(newValue)
             }
         }
@@ -108,7 +103,7 @@ open class NetStream: NSObject {
             return captureSettings
         }
         set {
-            lockQueue.async {
+            lockQueue.sync {
                 self.mixer.setValuesForKeys(newValue)
             }
         }
@@ -123,37 +118,22 @@ open class NetStream: NSObject {
             return recorderSettings
         }
         set {
-            lockQueue.async {
+            lockQueue.sync {
                 self.mixer.recorder.outputSettings = newValue
             }
         }
     }
 
-    open var recorderDelegate:AVMixerRecorderDelegate? {
-        get {
-            var recorderDelegate:AVMixerRecorderDelegate?
-            lockQueue.sync {
-                recorderDelegate = self.mixer.recorder.delegate
-            }
-            return recorderDelegate
-        }
-        set {
-            lockQueue.async {
-                self.mixer.recorder.delegate = newValue
-            }
-        }
-    }
-
     open func attachCamera(_ camera:AVCaptureDevice?) {
-        DispatchQueue.main.async {
+        lockQueue.async {
             self.mixer.videoIO.attachCamera(camera)
-            self.mixer.startRunning()
         }
     }
 
     open func attachAudio(_ audio:AVCaptureDevice?, automaticallyConfiguresApplicationAudioSession:Bool = true) {
         lockQueue.async {
-            self.mixer.audioIO.attachAudio(audio, automaticallyConfiguresApplicationAudioSession: automaticallyConfiguresApplicationAudioSession
+            self.mixer.audioIO.attachAudio(audio,
+                automaticallyConfiguresApplicationAudioSession: automaticallyConfiguresApplicationAudioSession
             )
         }
     }
@@ -177,6 +157,15 @@ open class NetStream: NSObject {
     }
     #endif
 
+    open func appendSampleBuffer(_ sampleBuffer:CMSampleBuffer, withType: CMSampleBufferType, options:[NSObject: AnyObject]? = nil) {
+        switch withType {
+        case .audio:
+            mixer.audioIO.captureOutput(nil, didOutputSampleBuffer: sampleBuffer, from: nil)
+        case .video:
+            mixer.videoIO.captureOutput(nil, didOutputSampleBuffer: sampleBuffer, from: nil)
+        }
+    }
+
     open func registerEffect(video effect:VisualEffect) -> Bool {
         return mixer.videoIO.registerEffect(effect)
     }
@@ -190,13 +179,15 @@ open class NetStream: NSObject {
         mixer.videoIO.exposurePointOfInterest = exposure
     }
 
+    open func dispose() {
+        lockQueue.async {
+            self.mixer.dispose()
+        }
+    }
+
     #if os(iOS)
     @objc private func on(uiDeviceOrientationDidChange:Notification) {
-        var deviceOrientation:UIDeviceOrientation = .unknown
-        if let device:UIDevice = uiDeviceOrientationDidChange.object as? UIDevice {
-            deviceOrientation = device.orientation
-        }
-        if let orientation:AVCaptureVideoOrientation = DeviceUtil.videoOrientation(by: deviceOrientation) {
+        if let orientation:AVCaptureVideoOrientation = DeviceUtil.videoOrientation(by: uiDeviceOrientationDidChange) {
             self.orientation = orientation
         }
     }

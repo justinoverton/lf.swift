@@ -24,7 +24,9 @@ Camera and Microphone streaming library via RTMP, HLS for iOS, macOS.
 ### Others
 - [x] Hardware acceleration for H264 video encoding, AAC audio encoding
 - [x] Support "Allow app extension API only" option
-- [ ] Objectiv-C Bridging
+- [x] Support GPUImage framework (~> 0.5.12)
+ - https://github.com/shogo4405/GPUHaishinKit.swift/blob/master/README.md
+- [ ] ~~Objectiv-C Bridging~~
 
 ## Requirements
 |-|iOS|OSX|XCode|Swift|CocoaPods|Carthage|
@@ -54,6 +56,19 @@ target 'Your Target'  do
     platform :ios, '8.0'
     import_pods
 end
+```
+### Carthage
+```
+github "shogo4405/lf.swift" ~> 0.5.0
+```
+
+## License
+New BSD
+
+## Donation
+Bitcoin
+```txt
+1HtWpaYkRGZMnq253QsJP6xSKZRPoJ8Hrs
 ```
 
 ## RTMP Usage
@@ -85,15 +100,13 @@ let sampleRate:Double = 44_100
 do {
     try AVAudioSession.sharedInstance().setPreferredSampleRate(sampleRate)
     try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
-    try AVAudioSession.sharedInstance().setMode(AVAudioSessionModeVideoChat)
+    try AVAudioSession.sharedInstance().setMode(AVAudioSessionModeDefault)
     try AVAudioSession.sharedInstance().setActive(true)
 } catch {
 }
 #endif
 
 var rtmpStream:RTMPStream = RTMPStream(connection: rtmpConnection)
-// 2nd arguemnt set false
-rtmpStream.attachAudio(AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio), automaticallyConfiguresApplicationAudioSession: false)
 
 rtmpStream.captureSettings = [
     "fps": 30, // FPS
@@ -135,6 +148,10 @@ rtmpStream.recorderSettings = [
         */
     ],
 ]
+
+// 2nd arguemnt set false
+rtmpStream.attachAudio(AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeAudio), automaticallyConfiguresApplicationAudioSession: false)
+
 ```
 ### Authentication
 ```swift
@@ -167,15 +184,6 @@ httpService.addHTTPStream(httpStream)
 
 // add ViewController#view
 view.addSubview(lfView)
-```
-
-## License
-New BSD
-
-## Donation
-Bitcoin
-```txt
-1FXxyfegCfhLcCAHV6jYu2Uska6JaAVux9
 ```
 
 ## Reference

@@ -45,15 +45,23 @@ final public class AVMixer: NSObject {
         }
     }
 
-    private var _session:AVCaptureSession? = nil
-    public var session:AVCaptureSession! {
-        if (_session == nil) {
-            _session = AVCaptureSession()
-            _session?.beginConfiguration()
-            _session?.sessionPreset = AVMixer.defaultSessionPreset
-            _session?.commitConfiguration()
+    fileprivate var _session:AVCaptureSession?
+    public var session:AVCaptureSession {
+        get {
+            if (_session == nil) {
+                _session = AVCaptureSession()
+                _session!.sessionPreset = AVMixer.defaultSessionPreset
+            }
+            return _session!
         }
-        return _session!
+        set {
+            _session = newValue
+        }
+    }
+    public private(set) lazy var recorder:AVMixerRecorder = AVMixerRecorder()
+
+    deinit {
+        dispose()
     }
 
     private(set) lazy var audioIO:AudioIOComponent = {
@@ -64,7 +72,28 @@ final public class AVMixer: NSObject {
        return VideoIOComponent(mixer: self)
     }()
 
-    private(set) lazy var recorder:AVMixerRecorder = AVMixerRecorder()
+    public func dispose() {
+        if (session.isRunning) {
+            session.stopRunning()
+        }
+        audioIO.dispose()
+        videoIO.dispose()
+    }
+}
+
+extension AVMixer {
+    final func startEncoding(delegate:Any) {
+        videoIO.encoder.delegate = delegate as? VideoEncoderDelegate
+        videoIO.encoder.startRunning()
+        audioIO.encoder.delegate = delegate as? AudioEncoderDelegate
+        audioIO.encoder.startRunning()
+    }
+    final func stopEncoding() {
+        videoIO.encoder.delegate = nil
+        videoIO.encoder.stopRunning()
+        audioIO.encoder.delegate = nil
+        audioIO.encoder.stopRunning()
+    }
 }
 
 extension AVMixer {
@@ -86,7 +115,9 @@ extension AVMixer: Runnable {
         guard !running else {
             return
         }
-        session.startRunning()
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.session.startRunning()
+        }
     }
 
     final func stopRunning() {
